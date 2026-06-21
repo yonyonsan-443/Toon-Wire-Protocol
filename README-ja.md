@@ -4,6 +4,11 @@
 Tôon Wire Protocolは、近距離に存在する既知のユーザー同士が、低電力無線通信（主にLoRa）を用いてメッセージを交換するための軽量P2P通信プロトコルである。
 本プロトコルではインターネット全体のルーティングや名前解決を対象とせず、ローカル環境における直接通信のみを対象とする。
 
+## Requirements Language
+
+この文書におけるキーワード "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", および "OPTIONAL" は、すべて大文字で記述された場合に限り、BCP 14、すなわち RFC 2119 および RFC 8174 に記述されている意味で解釈される。
+これらのキーワードは、Tôon Wire Protocolの実装における要求レベルを示すために使用される。
+
 ## Status of This Memo
 この文書は、Tôon Wire Protocol v0.1 の初期草案である。
 Issue や Pull Request を通じて、より良い仕様へ改善できれば幸いである。
