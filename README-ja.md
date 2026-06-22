@@ -56,6 +56,8 @@ Tôon Wire Protocolは以下を対象としない。
 - DNSのような名前解決システム
 - 中央サーバーを利用したメッセージ中継
 - 匿名通信ネットワーク
+- LoRaWAN上で動作するアプリケーションとしての実装
+- LoRaWANゲートウェイ、Network Server、Join Server、Application Serverへの依存
 - 人間の思考の取得や解読
 - 脳への情報提示手法
 - UI/UXの設計
