@@ -86,7 +86,7 @@ Tôon Wire Protocolは以下を対象としない。
 - SNS機能の実装
 - 音声通話および映像通話
 
-7. Pairing
+## 7. Pairing
 
 7.1 Overview
 
