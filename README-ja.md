@@ -14,7 +14,7 @@ Abstract
 
 Status of This Memo
 
-Table of Contents **←Here**
+Table of Contents
 
 1. Introduction
 2. Requirements Language
@@ -22,10 +22,14 @@ Table of Contents **←Here**
 4. Design Goals
 5. Non-Goals
 6. Architecture
-7. Packet Format
+7. Pairing
 8. Session Establishment
-9. Security Considerations
-10. References
+9. Packet Format
+10. Reliability and Fragmentation
+11. Security Considerations
+12. Regulatory Considerations
+13. References
+
 
 
 ## Introduction
