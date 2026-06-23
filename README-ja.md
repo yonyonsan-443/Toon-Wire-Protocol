@@ -4,10 +4,9 @@
 Tôon Wire Protocolは、近距離に存在する既知のユーザー同士が、低電力無線通信（主にLoRa）を用いてメッセージを交換するための軽量P2P通信プロトコルである。
 本プロトコルではインターネット全体のルーティングや名前解決を対象とせず、ローカル環境における直接通信のみを対象とする。
 
-## Requirements Language
-
-この文書におけるキーワード "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", および "OPTIONAL" は、すべて大文字で記述された場合に限り、BCP 14、すなわち RFC 2119 および RFC 8174 に記述されている意味で解釈される。
-これらのキーワードは、Tôon Wire Protocolの実装における要求レベルを示すために使用される。
+## Status of This Memo
+この文書は、Tôon Wire Protocol v0.1 の初期草案である。
+Issue や Pull Request を通じて、より良い仕様へ改善できれば幸いである。
 
 ## Table of Contents
 Abstract
@@ -30,7 +29,10 @@ Table of Contents
 12. Regulatory Considerations
 13. References
 
+## Requirements Language
 
+この文書におけるキーワード "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", および "OPTIONAL" は、すべて大文字で記述された場合に限り、BCP 14、すなわち RFC 2119 および RFC 8174 に記述されている意味で解釈される。
+これらのキーワードは、Tôon Wire Protocolの実装における要求レベルを示すために使用される。
 
 ## Introduction
 「もしも自分の思考を、遠くにいる友達とやり取りできたら。
@@ -47,10 +49,6 @@ Tôon Wire Protocolは、2024年夏の深夜に思いついたそのような発
 本プロトコルが扱うのは、そのような上位層のデバイスやUIが存在すると仮定したうえで、比較的近距離に存在する既知の相手同士が、低電力無線通信を用いてメッセージを交換するための通信仕様である。
 このため、本仕様ではLoRaのような低電力・低帯域の無線通信を前提とし、中央サーバー、DNS、広域ルーティングに依存しないP2P通信を重視する。
 また、通信時のヘッダー容量を削減するため、初回ペアリング時に交換する長期識別子であるPermanent-IDと、セッション中に使用する短期識別子であるCIDを分離する。
-
-## Status of This Memo
-この文書は、Tôon Wire Protocol v0.1 の初期草案である。
-Issue や Pull Request を通じて、より良い仕様へ改善できれば幸いである。
 
 ## 設計思想 [Design goals]
 
