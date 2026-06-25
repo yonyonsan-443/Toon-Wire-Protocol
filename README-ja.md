@@ -83,6 +83,32 @@ Tôon Wire Protocolは以下を対象としない。
 - SNS機能の実装
 - 音声通話および映像通話
 
+## 6. Architecture
+
+### 6.1 Reference Device Model
+
+本節では、Tôon Wire Protocolの設計時に想定する参考デバイスモデルを示す。
+本節の内容は、実装の一例を説明するものであり、特に明記されない限り、すべての実装に対する必須要件ではない。
+
+Tôon Wire Protocolは、主に身体装着型または携帯型の小型端末上で動作することを想定する。
+想定される端末は、以下のような構成要素を備える。
+
+- LoRa PHYによる送受信機能
+- 初回ペアリングのための近距離OOBチャネル
+- Pair Secret、秘密鍵、およびPeer Registryを保護するための保護ストレージ
+- ECDHE、HKDF、HMAC、および認証付き暗号を処理できる計算資源
+- 地域ごとの無線規制に従う送信制御機能
+- 上位層アプリケーションまたはユーザーインターフェースとの接続点
+
+初期実装では、OOBチャネルとしてBluetooth Low Energyを使用してもよい。
+BLEをOOBチャネルとして使用する実装は、LE Secure Connectionsまたは同等以上の安全性を持つ認証付きペアリング方式を使用するべきである（SHOULD）。
+
+実装は、Pair Secretおよび長期秘密鍵を通常の平文ストレージに保存するべきではない（SHOULD NOT）。
+可能であれば、TPM 2.0、Secure Element、または同等のhardware-backed protected storageを使用するべきである（SHOULD）。
+
+本仕様は、特定の筐体形状、電池方式、入力方式、表示方式、またはニューロインターフェースの実装方法を規定しない。
+これらはTôon Wire Protocolの上位層または実装依存の設計事項である。
+
 ## 7. Pairing
 
 ### 7.1 Overview
