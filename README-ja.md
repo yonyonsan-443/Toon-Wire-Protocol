@@ -28,6 +28,7 @@ Table of Contents
 11. Security Considerations
 12. Regulatory Considerations
 13. References
+14. Acknowledgements
 
 ## 1. Introduction
 「もしも自分の思考を、遠くにいる友達とやり取りできたら。
@@ -242,6 +243,15 @@ Pairing Transcript Hashは、デバッグ、監査、再ペアリング判定、
 
 複数のTWPバージョンまたは複数の暗号スイートをサポートする実装は、ダウングレード攻撃を防ぐため、合意されたバージョンおよび暗号スイートをペアリング時の認証対象に含めるべきである（SHOULD）。
 
+### 7.8 Scope of BLE Usage
+
+BLEまたはその他のOOBチャネルは、初回ペアリングのために使用される。
+
+ペアリング完了後、通常のTôon Wire通信はLoRaによって行われなければならない（MUST）。
+
+実装は、BLEを通常メッセージ配送のための恒常的な通信路として使用してはならない（MUST NOT）。
+ただし、再ペアリング、鍵更新、または明示的なメンテナンス操作のために、OOBチャネルを再度使用してもよい（MAY）。
+
 ### 8.1 Pair Hint Derivation
 
 Session Establishmentを開始する端末は、SESSION_INITフレームを送信する前に、セッションごとのランダム値である `session_nonce_i` を生成する。
@@ -276,3 +286,34 @@ Trust StateがblockedまたはrevokedであるPeerに一致した場合、実装
 
 Pair Hintの一致は、SESSION_INITの対象Peerを特定するための手段であり、Session Establishmentの完了を意味しない。
 実装は、後続のハンドシェイク認証およびセッション鍵導出が完了するまで、通常DATAフレームの送受信を開始してはならない（MUST NOT）。
+## 13. References
+
+### 13.1 Normative References
+
+[RFC2119]
+Bradner, S., “Key words for use in RFCs to Indicate Requirement Levels”, BCP 14, RFC 2119, March 1997.
+
+[RFC8174]
+Leiba, B., “Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words”, BCP 14, RFC 8174, May 2017.
+
+### 13.2 Informative References
+
+[RFC8376]
+Farrell, S., Ed., “Low-Power Wide Area Network (LPWAN) Overview”, RFC 8376, May 2018.
+
+[RFC5869]
+Krawczyk, H. and P. Eronen, “HMAC-based Extract-and-Expand Key Derivation Function (HKDF)”, RFC 5869, May 2010.
+
+[RFC7748]
+Langley, A., Hamburg, M., and S. Turner, “Elliptic Curves for Security”, RFC 7748, January 2016.
+
+[RFC8439]
+Nir, Y. and A. Langley, “ChaCha20 and Poly1305 for IETF Protocols”, RFC 8439, June 2018.
+
+## 14. Acknowledgements
+
+著者は、本仕様の構成および記述に大きな影響を与えたIETFコミュニティ、ならびに既存のインターネットプロトコルの設計者およびRFC著者に謝意を表する。
+
+本仕様は、ChatGPTの支援を受けて作成された。ChatGPTは、設計方針の検討、文章の推敲、章構成の整理、およびプロトコル設計上の論点整理に使用された。最終的な設計判断、用語の選択、および本文の内容に関する責任は著者にある。
+
+また、本実験的仕様に対して、将来的にIssue、Pull Request、レビュー、実装上の知見、またはSecurity Considerationsを提供するすべての読者および実装者に感謝する。
